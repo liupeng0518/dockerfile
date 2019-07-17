@@ -1,0 +1,15 @@
+language:
+  - go 
+sudo: required
+services: docker
+go:
+  - "1.11"
+
+script:
+  - cd ./mq/
+  - chmod +x docker-entrypoint.sh
+  - docker build . -t  liupeng0518/rabbitmq:3.7.8-amd64
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push liupeng0518/rabbitmq:3.7.8-amd64
+ 
