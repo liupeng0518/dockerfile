@@ -19,8 +19,7 @@ RUN CGO_ENABLED=0 GOOS=linux GO111MODULE=on go build -a -ldflags "-w" -o /elasti
 
 
 FROM liupeng0518/elasticsearch-oss:6.6.1-arm64 
-RUN curl -Lo - https://github.com/multiarch/qemu-user-static/releases/download/v2.11.1/qemu-aarch64-static.tar.gz | \
-    tar zxf - -C /usr/bin/qemu-aarch64-static
+COPY  /usr/bin/qemu-aarch64-static /usr/bin/qemu-aarch64-static
 VOLUME ["/data"]
 EXPOSE 9200 9300
 
