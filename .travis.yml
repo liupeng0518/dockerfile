@@ -10,6 +10,8 @@ script:
   # - cd ./mq/
   # - chmod +x docker-entrypoint.sh
   # - docker build . -t  liupeng0518/rabbitmq:3.7.8-amd64
+  - curl -Lo - https://github.com/multiarch/qemu-user-static/releases/download/v2.11.1/qemu-aarch64-static.tar.gz | \
+    tar zxf - -C /usr/bin/qemu-aarch64-static
   - cd fluentd-elasticsearch/es-image
   - docker build . -t  liupeng0518/elasticsearch:v6.6.1-arm64
 
