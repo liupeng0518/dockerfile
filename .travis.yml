@@ -5,9 +5,7 @@ sudo: required
 services: docker
 # go:
 #   - "1.11"
-before_script:
-  - sudo wget https://github.com/multiarch/qemu-user-static/releases/download/v2.11.1/qemu-aarch64-static.tar.gz
-  - sudo tar zxf qemu-aarch64-static.tar.gz -C /usr/bin/
+
 script:
   # - cd ./mq/
   # - chmod +x docker-entrypoint.sh
