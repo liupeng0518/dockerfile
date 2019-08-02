@@ -1,9 +1,10 @@
 language:
-  - go 
+#   - go
+ - ruby
 sudo: required
 services: docker
-go:
-  - "1.11"
+# go:
+#   - "1.11"
 
 script:
   # - cd ./mq/
