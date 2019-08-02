@@ -5,12 +5,13 @@ sudo: required
 services: docker
 # go:
 #   - "1.11"
-
+install:
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 script:
   # - cd ./mq/
   # - chmod +x docker-entrypoint.sh
   # - docker build . -t  liupeng0518/rabbitmq:3.7.8-amd64
-    
+
   - cd fluentd-elasticsearch/es-image
   - docker build . -t  liupeng0518/elasticsearch:v6.6.1-arm64
 
