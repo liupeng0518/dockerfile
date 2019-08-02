@@ -13,8 +13,9 @@
 # limitations under the License.
 
 FROM golang:1.11.5 AS builder
+ENV GOARCH=arm64
 COPY elasticsearch_logging_discovery.go go.mod go.sum /
-RUN CGO_ENABLED=0 GOARCH=arm64 GOOS=linux GO111MODULE=on go build -a -ldflags "-w" -o /elasticsearch_logging_discovery /elasticsearch_logging_discovery.go
+RUN CGO_ENABLED=0 GOOS=linux GO111MODULE=on go build -a -ldflags "-w" -o /elasticsearch_logging_discovery /elasticsearch_logging_discovery.go
 
 
 FROM liupeng0518/elasticsearch-oss:6.6.1-arm64 
