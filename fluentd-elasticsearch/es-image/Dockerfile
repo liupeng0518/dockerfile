@@ -28,5 +28,5 @@ COPY run.sh bin/
 COPY config/elasticsearch.yml config/log4j2.properties config/
 
 USER root
-RUN chown -R elasticsearch:elasticsearch ./
+# RUN chown -R elasticsearch:elasticsearch ./
 CMD ["bin/run.sh"]
